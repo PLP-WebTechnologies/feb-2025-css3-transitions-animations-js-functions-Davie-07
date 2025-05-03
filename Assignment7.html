@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Animation + localStorage Example</title>
+<title>Week7 webdevelopment plp Animation and localStorage assignment</title>
 <style>
   body {
     background: #121212;
@@ -76,12 +76,12 @@ function loadPreference() {
   }
 }
 
-// === Save user preference ===
+// Save user preference
 function savePreference(speed) {
   localStorage.setItem('animationSpeed', speed);
 }
 
-// === Trigger animation ===
+// Triggering the applied animation
 function triggerAnimation() {
   const img = document.getElementById('myImage');
   const speed = document.getElementById('speedSelect').value;
@@ -89,7 +89,7 @@ function triggerAnimation() {
   // Apply user-selected speed to CSS animation
   img.style.animationDuration = speed;
 
-  // Add animation class
+  // animation class
   img.classList.add('animate');
 
   // Remove class after animation ends so it can be triggered again
@@ -98,14 +98,14 @@ function triggerAnimation() {
   }, { once: true });
 }
 
-// === Event Listeners ===
+// Event Listeners
 document.getElementById('animateBtn').addEventListener('click', triggerAnimation);
 
 document.getElementById('speedSelect').addEventListener('change', function() {
   savePreference(this.value);
 });
 
-// === Initialize ===
+// Initializing
 loadPreference();
 </script>
 
